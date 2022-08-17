@@ -1,0 +1,29 @@
+<!DOCKTYPE html>
+<head>
+<title>Even Odd</title>
+<body>
+<button onclick="myfunction()">Submit</button>
+<div id="rea"></div>
+<div id="reb"></div>
+
+<script>
+function myfunction()
+{
+  var arr= [5,8,12,19,21,42,45,25];
+  var resulta="";
+  var resultb="";
+       
+        for(i=0;i<arr.length;i++){
+            if(arr[i]%2>0)
+     {resulta=resulta + "," + arr[i];
+                                }
+            else{
+     resultb=resultb + ";" + arr[i];
+                                 }
+   document.getElementById('rea').innerHTML=resulta;
+   document.getElementById('reb').innerHTML=resultb;
+                } 
+                    }
+</script>
+</body>
+</html>

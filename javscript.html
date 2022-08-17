@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Learning JAVASCRIPT </title>
+<link rel="icon" type="image/x-icon" href="image/download (1).png">
+<style>
+body{
+background-color=light gray
+}
+</style>
+<body>
+​
+<h2>What Can JavaScript Do?</h2>
+​
+<p>JavaScript can change HTML attribute values.</p>
+​
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+​
+<button onclick="document.getElementById('myImage').src='D:/Prateek/Image/pic_bulbon.gif'">Turn on the light</button>
+​
+<img id="myImage" src="D:\Prateek\Image\pic_bulboff.gif" style="width:100px">
+​
+<button onclick="document.getElementById('myImage').src='D:/Prateek/Image/pic_bulboff.gif'">Turn off the light</button>
+​
+
+<p id="demo">JavaScript can change the style of an HTML element.</p>
+
+<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click Me!</button>
+
+
+<p id="demo">JavaScript can hide HTML elements.</p>
+
+<script>
+window.alert(you can do it!)
+<button on click:>
+</script>
+<button type="button" onclick="document.getElementById('demo').style.display='none'">Click Me!</button>
+<p id="damru"></p>
+​
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("damru").innerHTML = fruits.toString();
+</script> <br>
+
+<p id="piyush"></p>
+
+<script>
+console.log('123');
+const fruits123 = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits123);
+console.log(fruits123.join(" * "));
+document.getElementById("piyush").innerHTML = fruits123.join(" * ");
+console.log('456');
+</script>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+​
+<script>
+const fruits789 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+fruits.pop();
+document.getElementById("demo2").innerHTML = fruits;
+</script>
+
+<p id="demo10"></p>
+<p id="demo20"></p>
+
+<script>
+const fruitssw = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo10").innerHTML = fruits;
+fruits[0] = "Kiwi";
+document.getElementById("demo20").innerHTML = fruits;
+</script>
+
+
+</body>
+</html>
+​

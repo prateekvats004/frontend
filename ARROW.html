@@ -1,0 +1,28 @@
+<!DOCKTYPE>
+<html>
+<head>
+<title>arrow</title>
+</head>
+ <body>
+ <button onclick="myfunction()">ODD NUMBERS</button>
+ <div  id="res">
+ 
+ <script>
+ function  myfunction()
+  { 
+     var r= [10,15,5,20,28,8,16,12]; 
+	 var result="";
+	 for(i=0;i<r.length;i++)
+       { 
+	    if(r[i]%2==1){
+	    result= result + "," + r[i];;
+	   
+	    
+		   }
+		   }
+	
+	 document.getElementById('res').innerHTML=result;
+	  }
+</script>	  
+</body>
+</html>

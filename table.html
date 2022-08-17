@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>TABLE</title>
+</head>
+<body>
+  
+<h1>INPUT THE NO. AND GET TABLE </h1><br<br>
+
+<form>
+<label  for="number">INPUT THE NO.</label>
+<input  type="number"  id="number"    value="2"> <br>
+
+
+
+<input  type="button"  value="submit"  onclick="multiplicationTable()">
+</form>
+<div id="res">
+
+
+<script>
+function multiplicationTable()
+{
+   var n;
+   n= document.getElementById('number').value;
+   var res="";
+   for(var i=1;i<=10;i++)
+   {
+      res= res + "<br>" + n * i ;
+	  
+       }
+	  document.getElementById('res').innerHTML=res;
+     }
+</script>
+
+
+</body>
+</html>
