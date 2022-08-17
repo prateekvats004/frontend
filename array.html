@@ -1,0 +1,77 @@
+<!DOCKTYPE>
+<html>
+<head>
+<title>array</title>
+</head>
+<body>
+<h1>Press submit to access the details of over 15</h1>
+<button onclick="myfunction()">submit</button>
+<div  id="result"></div>
+
+<script>
+function myfunction()
+{
+  var res="";
+   var flag=0;
+  var arr=[
+           {"Id":1, "Name":"Sharma", "Age": 15},
+		   {"Id":2, "Name":"Verma", "Age": 20},
+		   {"Id":3, "Name":"Aman", "Age": 12},
+		   {"Id":4, "Name":"Raman", "Age": 14},
+		   {"Id":5, "Name":"Chunnu", "Age": 25},
+		   {"Id":6, "Name":"Munnu", "Age": 5},
+		   {"Id":7, "Name":"Sonu", "Age": 18},
+		   {"Id":8, "Name":"Monu", "Age": 10},
+		   {"Id":9, "Name":"Akki", "Age": 12},
+		   {"Id":10, "Name":"Kukki", "Age": 15}
+		  ]; 
+for(i=0; i<arr.length; i++)
+{
+	if(arr[i].Age>=15)
+	{
+	if(flag == 0)
+	{
+	res = arr[i].Name; 
+	flag = 1;
+	}
+	else
+	{
+	res = res + "," + arr[i].Name;
+	
+	}
+		
+	}
+}
+document.getElementById('result').innerHTML=res;
+}	  
+</script> 
+ 		 
+</body>
+<html>		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+
+			
+			
