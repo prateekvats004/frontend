@@ -1,0 +1,36 @@
+<!DOCKTYPE>
+<html>
+<head>
+<title>vowels</title>
+</head>
+<body>
+<input type="text"  id="insert">
+<button onclick="myfunction()">submit</button>
+<div id="result"></div>
+
+<script>
+function myfunction()
+{ 
+   var str=[];
+   
+   str=document.getElementById("insert").value;
+   
+
+ var count = 0;
+for(r=0; r<str.length; r++)
+{ 
+	if(str[r]=="a"|| str[r]=="e"|| str[r]=="i"|| str[r]=="o"|| str[r]=="u")
+	{
+                  
+               count++;           
+	}
+}
+
+
+document.getElementById("result").innerHTML=count;
+          
+
+}
+</script>
+</body>
+</html>

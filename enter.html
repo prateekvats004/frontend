@@ -1,0 +1,44 @@
+<!DOCKTYPE>
+<html>
+<head>
+<title>Enter</title>
+</head>
+<body>
+<input type="number"  id="enter" >
+<button onclick="myfunction()">Submit</button>
+<div id="number"></div>
+<div id="oddnum"></div>
+<div id="array"></div>
+<div id="add"></div>
+<script>
+var arr=[];
+
+function myfunction()
+{
+var num;
+let odd;
+var sum=0;
+num=document.getElementById("enter").value;
+
+document.getElementById("number").innerHTML="You Entered " + num;
+
+if(num%2==1){
+   odd="You Entered a " + "odd number"
+            }
+else{
+    odd="You Entered a " + "even number"   
+    }
+document.getElementById("oddnum").innerHTML= odd;
+
+arr.push(parseInt(num));                        
+document.getElementById("array").innerHTML= "array = " + arr;
+
+for(i=0; i<arr.length; i++){
+  sum=sum + arr[i];
+  }
+  
+document.getElementById("add").innerHTML=sum;
+}
+</script>
+</body>
+</html>

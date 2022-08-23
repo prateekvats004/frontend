@@ -5,6 +5,8 @@
 <button onclick="myfunction()">Submit</button>
 <div id="rea"></div>
 <div id="reb"></div>
+<div id="rec"></div>
+<div id="red"></div>
 
 <script>
 function myfunction()
@@ -12,18 +14,25 @@ function myfunction()
   var arr= [5,8,12,19,21,42,45,25];
   var resulta="";
   var resultb="";
+  var resultc=0;
+  var resultd=0;
        
         for(i=0;i<arr.length;i++){
-            if(arr[i]%2>0)
-     {resulta=resulta + "," + arr[i];
-                                }
+            if(arr[i]%2==1){
+      resulta=resulta + "," + arr[i];
+	  resultc=resultc + arr[i];
+                          }
             else{
      resultb=resultb + ";" + arr[i];
-                                 }
+	 resultd=resultd + arr[i];
+                 }   
+				 }
    document.getElementById('rea').innerHTML=resulta;
    document.getElementById('reb').innerHTML=resultb;
-                } 
-                    }
+   document.getElementById('rec').innerHTML=resultc;
+   document.getElementById('red').innerHTML=resultd;
+                
+}
 </script>
 </body>
 </html>
