@@ -1,0 +1,22 @@
+.welcome {
+	text-align:center;
+	color:blue;
+	text-transform:uppercase;
+    word-spacing: 10px;
+	text-shadow: 2px 2px 5px red;
+	font-size: 100px;
+	line-height: 0.7;
+	height : 100px;
+ } 
+
+td{
+     text-align:center;
+   }    
+
+input{
+margin-top: 20px;
+}
+
+.calculation{
+	text-align:center;
+}

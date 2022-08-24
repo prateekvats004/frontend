@@ -1,0 +1,52 @@
+<!DOCKTYPE>
+<html>
+<head>
+<link rel="stylesheet" href="learning.css">
+<script src="script.js"></script>
+</head>
+<body>
+<h1 class="welcome">Welcome guest</h1>
+<table align="center">
+<tr>
+    <th colspan="2">First Number</th>
+	<td colspan="2"><input type="number" id="first" name="first"></td>
+</tr>
+
+<tr>
+    <th colspan="2">Second Number</th>
+	<td colspan="2"><input type="number" id="second" name="second"></td>
+</tr>
+
+<tr>
+    <td><input type="button" value="Add" onclick="calculate('+')"></td>
+	<td><input type="button" value="Sub" onclick="calculate('-')"></td>
+	<td><input type="button" value="Mul" onclick="calculate('*')"></td>
+	<td><input type="button" value="Div" onclick="calculate('/')"></td>
+</tr>
+<tr>
+    <td><input type="button" value="Wrong Input" onclick="calculate('#')"></td>
+	
+</tr>
+</table>
+<div id="result" class="calculation"></div>
+
+<script>
+function calculate(operator)
+{
+
+ var a;
+ var b;
+ 
+ a=parseInt(document.getElementById("first").value);
+ b=parseInt(document.getElementById("second").value);
+ 
+ var result = calculatorwithifelse(a, b, operator);
+  
+ document.getElementById("result").innerHTML = result;
+ }
+ 
+
+ </script>
+
+
+ 
