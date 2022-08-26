@@ -14,8 +14,13 @@ td{
    }    
 
 input{
-margin-top: 20px;
+margin-top: 10px;
 }
+
+.input{
+text-align: 10px;
+}
+
 
 .calculation{
 	text-align:center;

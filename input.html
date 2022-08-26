@@ -1,0 +1,41 @@
+<!DOCKTYPE html>
+<head>
+<title>Input games</title>
+<link rel="stylesheet" href="learning.css">
+</head>
+<body>
+<h1 class="welcome">Welcome guest</h1>
+<div align="center">
+<input type="number" id="inputvalue" name="inputvalue">
+<input type="button" onclick="inputfun()" value="submit">
+
+
+<p id ="dynamicParagraph">
+</div>
+<script>
+function inputfun()
+{
+  var a;
+  a=document.getElementById("inputvalue").value;
+  var c=document.getElementById("dynamicParagraph");
+ while (c.hasChildNodes()) {
+                c.removeChild(c.lastChild);
+				}
+  
+  for(i=0; i<a; i++)
+  {
+  var b= document.createElement("input");
+  b.type = "text";
+  b.name = "member" + i;
+  
+  c.appendChild(b);
+  c.appendChild(document.createElement("br"));
+  }
+  var d=document.createElement("input");
+  d.type = "submit";
+  d.name = "submit";
+  c.appendChild(d);
+}
+  
+ </script>
+ 
