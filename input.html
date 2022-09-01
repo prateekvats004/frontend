@@ -3,16 +3,18 @@
 <title>Input games</title>
 <link rel="stylesheet" href="learning.css">
 </head>
-<body>
+<body align="center">
 <h1 class="welcome">Welcome guest</h1>
 <div align="center">
 <input type="number" id="inputvalue" name="inputvalue">
 <input type="button" onclick="inputfun()" value="submit">
 
 
-<p id ="dynamicParagraph">
-</div>
+<p id ="dynamicParagraph"></p>
+<div id ="dynamicoutput" align="center"></div>
+
 <script>
+ 
 function inputfun()
 {
   var a;
@@ -26,16 +28,43 @@ function inputfun()
   {
   var b= document.createElement("input");
   b.type = "text";
-  b.name = "member" + i;
-  
+  b.name = "member";
   c.appendChild(b);
   c.appendChild(document.createElement("br"));
   }
   var d=document.createElement("input");
-  d.type = "submit";
+  d.type = "button";
+  d.value="submit";
   d.name = "submit";
+  d.setAttribute('onclick', 'outputfun()');
   c.appendChild(d);
 }
+
+function outputfun()
+{
+  var nodes=document.getElementsByName("member");
+  var arr=[];
   
- </script>
+  for(r=0; r<nodes.length; r++)
+  { 
+   arr.push(nodes[r].value);
+  }
+  var ul=document.createElement("ul")
+  ul.setAttribute('style', 'align: center;');  
+  var e=document.getElementById("dynamicoutput");
+  while (e.hasChildNodes()) {
+                e.removeChild(e.lastChild);
+				}
+  
+    for (var j = 0; j < arr.length; j++)
+    {
+    var li = document.createElement("li"); 
+	li.innerHTML=arr[j];
+	
+	ul.appendChild(li);
+	}
+   e.appendChild(ul);
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </script>
+ </body>                                
+ </html>
  
