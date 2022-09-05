@@ -1,0 +1,33 @@
+<DOCKTYPE! html>
+<head>
+<title>objects</title>
+<link rel="stylesheet" href="learning.css">
+</head>
+<body align="center">
+<h1 class="welcome">Press submit to see objects</h1>
+<button onclick="MyFunction()" class="submit";>Submit</button>
+<div id="result"></div>
+<script>
+
+const myObject ={
+            id:1,
+			name:"Prateek",
+			age:20,
+			courses:"c#,java,HTML",
+			married:"No",
+			gender:"Male",
+			address:"ghewra"
+		  };
+		  
+function MyFunction(){
+PrintData(myObject);
+}
+	  
+function PrintData(obj)
+{
+document.getElementById("result").innerHTML= obj.id + "<br>" + obj.name + "<br>" + obj.courses + "<br>" + obj.married + "<br>" + obj.gender + "<br>" + obj.address + "<br>";
+
+}
+</script>
+</body>
+</html>

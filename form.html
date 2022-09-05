@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>Form</title>
+<link rel="stylesheet" href="learning.css">
+</head>
+<body  class="formstyle">
+
+<h1 class="welcome">Fill the details</h1>
+
+<form  autocomplete="on">
+<label for="name">Name</label>
+<input type="text" id="name" name="name" maxlength=20  required><br><br><br>
+
+<label  for="age">AGE</label>
+<input type="number" id="age" name="age" required><br><br><br>
+
+<label for="city">CITY</label>
+<select id="city" required>
+<option>Select</option>
+<option>DELHI</option>
+<option>HARAYANA</option>
+<option>PUNJAB</option>
+<option>CHENNAI</option>
+</select><br><br><br>
+
+<label for="address">ADDRESS</label><br>
+<textarea id="address" rows="5" cols="50"></textarea><br><br><br>
+
+<label for="gender">GENDER</label>
+<input type="radio" id="male" name="gender" value="MALE">
+<label for="male">MALE</label>
+<input type="radio" id="female" name="gender" value="FEMALE">
+<label for="female">FEMALE</label><br><br><br>
+ 
+<label for="course">COURSES APPLIED FOR:</label><br>
+<input type="checkbox" id="c" name="abcd" value="C#">
+<label for="c#">C#</label>
+<input type="checkbox" id="javascript" name="abcd" value="javascript">
+<label for="javascript">JAVASCRIPT</label>
+<input type="checkbox" id="html" name="abcd" value="html"     >
+<label for="HTML">HTML</label>
+<input type="checkbox" id="python" name="abcd" value="python">
+<label for="python">PYTHON</label>
+<input type="checkbox"  id="css"  name="abcd"        value="css">
+<label for="css">CSS</label><br><br><br>
+  
+<input type="reset" id="clear" name="clear value="clear" class="submit">
+<input type="button" value="Submit"     onclick="myForm()" class="submit">  
+
+</form>
+
+<div id="details"></div>
+<script>
+
+function myForm()
+{
+var a = {
+name : "",
+age : 0,
+city:"",
+address:"",
+gender:"",
+course:[]
+};
+
+a.name=document.getElementById("name").value;
+a.age=document.getElementById("age").value;
+a.city=document.getElementById("city").value;
+a.address=document.getElementById("address").value;
+
+var gen=document.getElementsByName("gender");
+for(i = 0; i < gen.length; i++) {
+                if(gen[i].checked)
+a.gender=gen[i].value;
+				}
+				
+var co=document.getElementsByName('abcd'.302);				
+for(i = 0; i < co.length; i++) {
+                if(co[i].checked)
+a.course.push(co[i].value);
+				}
+printdata(a);
+}
+        
+		 
+function printdata(a){
+document.getElementById("details").innerHTML=a.name + "<br>" + a.age + "<br>" + a.city + "<br>" + a.address + "<br>" + a.gender + "<br>" + a.course;
+}
+</script>
+</body>
+</html>
+
+
+

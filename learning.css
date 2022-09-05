@@ -17,10 +17,20 @@ input{
 margin-top: 10px;
 }
 
-input{
-margin-top: 10px;
-}
+
 
 .calculation{
 	text-align:center;
 }
+.submit{
+	margin:50px;
+	height:20px;
+    width:100px;
+	color:green;
+}
+
+.formstyle{
+	/*text-align:center;*/
+	margin:100px;
+	background-color:lightyellow;
+}	
