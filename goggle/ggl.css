@@ -33,11 +33,55 @@
 	color: red;
 }
 
+.search-box img{
+	width: 30px;
+	height: 20%;
+}
 
-.search-box button img{
-	width:30px;
-	height:30px;
-	cursor:pointer;
+.signin{
+	width: 35%;
+	padding: 4% 2px 5% 2px;
+	border: 2px solid rgba(225, 225, 225, 0.8);
+	border-radius: 2%;
+	margin: 5% 32% 0% 32%
+}
+
+.signin button{
+	width: 80px;
+	height: 40px;
+	border: none;
+	color: white;
+	border-radius: 10%;
+	background-color: blue;
+}
+
+.signin a{
+	 text-decoration: none;
+}
+
+.signin input{
+	border: ;
+	border-radius: ;
+}
+
+.style1{
+	position: relative;
+	right: 160px;
+}
+
+.style2{
+	position: relative;
+	right: 110px;
+}
+
+.style3{
+	position: relative;
+	left: 100px;
+}
+
+.text{
+	font-size: 25px;
+	margin: 5px 0 30px;
 }
 
 .footer {
@@ -49,3 +93,40 @@
   background-color: #D0DAEE;
   font-size:20px;
 }
+
+.createacc{
+	width: 52%;
+	padding: 4% 20px 3% 20px;
+	border: 2px solid rgba(225, 225, 225, 0.8);
+	border-radius: 2%;
+	margin: 1% 23% 0% 24%
+}
+
+.createacc button{
+	width: 80px;
+	height: 40px;
+	border: none;
+	color: white;
+	border-radius: 10%;
+	background-color: blue;
+}
+
+.createacc a{
+	 text-decoration: none;
+}
+
+.createacc input{
+	border: ;
+	border-radius: ;
+}
+
+.style4{
+	position: relative;
+	left: 0;
+}
+
+.style5{
+	position: relative;
+	left: 190px;
+}
+
