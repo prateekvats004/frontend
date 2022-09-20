@@ -76,13 +76,13 @@
   <div id="London" class="tabcontent">
     <h3>Enter Name</h3>
     <input type="text" class="form-control" id="name" name="name" style="width:70%; height:40px; margin:20px 20px" placeholder="Enter Name">
-    <button class="button" onclick="next(event, 'Paris')">Next</button>
+    <button class="button" onclick="next('age', 'Paris')">Next</button>
   </div>
 
   <div id="Paris" class="tabcontent">
     <h3>Age</h3>
     <input type="number" class="form-control" id="umar" name="age" style="width:70%; height:40px; margin:20px 20px" placeholder="Age">
-    <button class="button" onclick="next2(event, 'Tokyo')">Next</button>
+    <button class="button" onclick="next('city', 'Tokyo')">Next</button>
   </div>
 
   <div id="Tokyo" class="tabcontent">
@@ -94,13 +94,13 @@
       <option>PUNJAB</option>
       <option>CHENNAI</option>
     </select>
-   <button class="button" onclick="next3(event, 'Newyork')">Next</button>
+   <button class="button" onclick="next('address', 'Newyork')">Next</button>
   </div>
   
    <div id="Newyork" class="tabcontent">
     <h3>Address</h3>
     <input type="text" class="form-control" id="pata" name="name" style="width:70%; height:40px; margin:20px 20px" placeholder="Address">
-    <button class="button" onclick="next4(event, 'Newdelhi')">Next</button>
+    <button class="button" onclick="next('gender', 'Newdelhi')">Next</button>
   </div>
   
   
@@ -111,7 +111,7 @@
 	<input type="radio" id="female" value="Female" name="gender" style="margin:20px 20px">
 	<label for="female">Female</label><br>
 
-    <button class="button" onclick="next5(event, 'Pune')">Next</button>
+    <button class="button" onclick="next('course', 'Pune')">Next</button>
   </div>
   
    <div id="Pune" class="tabcontent">
@@ -126,7 +126,7 @@
 	<label for="css">CSS</label>
 	<br>
     
-	 <button class="button" onclick="result(event, 'India')">Submit</button>
+	 <button class="button" onclick="next('result', 'India')">Submit</button>
   </div>
   
   <div id="India" class="tabcontent">
@@ -148,7 +148,7 @@
       evt.currentTarget.className += " active";
     }
 
-    function next(evt, Paris) {
+	 function next(nexttab, nextdiv) {
       var i, tabcontent, tablinks;
       tabcontent = document.getElementsByClassName("tabcontent");
       for (i = 0; i < tabcontent.length; i++) {
@@ -158,82 +158,12 @@
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
       }
-      document.getElementById("Paris").style.display = "block";
-      document.getElementById("age").className += " active";
-    }
-
-    function next2(evt, Tokyo) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById("Tokyo").style.display = "block";
-      document.getElementById("city").className += " active";
-    }
-	
-	 function next3(evt, Newyork) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById("Newyork").style.display = "block";
-      document.getElementById("address").className += " active";
-    }
-
- function next4(evt, Newdelhi) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById("Newdelhi").style.display = "block";
-      document.getElementById("gender").className += " active";
-    }
-	
-	
-	function next5(evt, Pune) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById("Pune").style.display = "block";
-      document.getElementById("course").className += " active";
-    }
-	
-	
-	function result(evt, India) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById("India").style.display = "block";
-      document.getElementById("result").className += " active";
+      document.getElementById(nextdiv).style.display = "block";
+      document.getElementById(nexttab).className += " active";
+	  
 	  show();
     }
+
 
   function show() 
   {

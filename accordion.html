@@ -43,18 +43,18 @@
     <div class="panel">
         <h3>Enter Name</h3>
         <input type="text" class="form-control" id="name" name="name" style="width:70%; height:40px; margin:20px 20px" placeholder="Enter Name">
-		<button class="button">Next</button>	
+		<button class="button" onclick="next('age', 'ag')">Next</button>	
     </div>
 
-    <button class="accordion">Age</button>
-    <div class="panel">
+    <button class="accordion" id="age">Age</button>
+    <div class="panel" id="ag">
         <h3>Age</h3>
         <input type="number" class="form-control" id="umar" name="age" style="width:70%; height:40px; margin:20px 20px" placeholder="Age">
-		<button class="button">Next</button>
+		<button class="button" onclick="next('city', 'cty')">Next</button>
     </div>
 
-    <button class="accordion">City</button>
-    <div class="panel">
+    <button class="accordion" id="city">City</button>
+    <div class="panel" id="cty">
         <h3>City</h3>
         <select class="form-control" id="shar" name="email" style="width:70%; height:40px; margin:20px 20px" placeholder="City">
             <option>Select</option>
@@ -63,28 +63,28 @@
             <option>PUNJAB</option>
             <option>CHENNAI</option>
         </select>
-		<button class="button">Next</button>
+		<button class="button" onclick="next('address', 'add')">Next</button>
     </div>
 
-    <button class="accordion">Address</button>
-	 <div class="panel">
+    <button class="accordion" id="address">Address</button>
+	 <div class="panel" id="add">
 	 <h3>Address</h3>
 	  <input type="address" class="form-control" id="pata" name="address" style="width:70%; height:40px; margin:20px 20px" placeholder="Address">
-	  <button class="button">Next</button>
+	  <button class="button" onclick="next('gender', 'mf')">Next</button>
 	  </div>
 	  
-	 <button class="accordion">Gender</button>
-	 <div class="panel">
+	 <button class="accordion" id="gender">Gender</button>
+	 <div class="panel" id="mf">
 	 <h3>Gender</h3>
 	  <input type="radio" id="male"  value="Male" name="gender" style="margin:20px 20px">
 	  <label for="male">Male</label>
 	<input type="radio" id="female" value="Female" name="gender" style="margin:20px 20px">
 	  <label for="female">Female</label><br>
-	  <button class="button">Next</button>
+	  <button class="button" onclick="next('courses', 'cou')">Next</button>
 	  </div>
 	  
-	  <button class="accordion">Courses</button>
-	 <div class="panel">
+	  <button class="accordion" id="courses">Courses</button>
+	 <div class="panel" id="cou">
 	 <h3>Courses</h3>
 	  <input type="checkbox" id="c#"  value="C#" name="courses" style="margin:20px 20px">
 	  <label for="c#">C#</label>
@@ -94,11 +94,11 @@
 	  <label for="Java">Java</label>
 	    <input type="checkbox" id="python"  value="PYTHON" name="courses" style="margin:20px 20px">
 	  <label for="python">PYTHON</label><br>
-	  <button class="button">Submit</button>
+	  <button class="button" onclick="next('result', 'res')">Submit</button>
 	  </div>
 	  
-	   <button class="accordion">Result</button>
-	 <div class="panel">
+	   <button class="accordion" id="result">Result</button>
+	 <div class="panel" id="res">
 	 <h3>Result</h3>
 	 <div id="value"></div>
 	 </div>
@@ -130,22 +130,26 @@ if(pan[r].style.display === "block"){
     } else {
       panel.style.display = "block";
     }
+	
 	show();
   });
  
-            var next = document.getElementsByClassName("button");
-             var acc = document.getElementsByClassName("accordion");
-			 
-	 for(i=0; i < next.length; i++) {
-	  
-	  next[i].addEventListener('click', function()  {
-	   this.classList.toggle("active");
-	    var next = this.nextElementSibling
-		 accordion = document.getElementsByClassName("accordion");
+         
+	   function next(nextacc, nextdiv) {
+      var i, panel, accordion;
+      panel = document.getElementsByClassName("panel");
+      for (i = 0; i < panel.length; i++) {
+        panel[i].style.display = "none";
+      }
+      accordion = document.getElementsByClassName("accordion");
       for (i = 0; i < accordion.length; i++) {
         accordion[i].className = accordion[i].className.replace(" active", "");
       }
-	  );
+      document.getElementById(nextdiv).style.display = "block";
+      document.getElementById(nextacc).className += " active";
+	  show();
+	  }
+	  
  
  
  
