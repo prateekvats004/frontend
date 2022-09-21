@@ -1,0 +1,23 @@
+*{
+	box-sizing: border-box;
+}
+
+.background {
+	background: 2px  #f1f1f1;
+	
+}
+
+.flexbox {
+	
+	margin: 10% 20% 0 40%;
+	color: red;
+	font-family: serif;
+}
+
+.button {
+	width: 100px;
+	color: white;
+	background-color: blue;
+	border: 2px;
+	border-radius: 10px;
+}

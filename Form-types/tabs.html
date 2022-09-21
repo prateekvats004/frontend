@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap demo</title>
+  <title>Tabs</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <link rel="stylesheet" href="D:\Prateek\frontend\goggle\ggl.css">
@@ -61,6 +61,7 @@
 </head>
 
 <body class="createacc">
+
   <div class="tab">
     <button class="tablinks" onclick="openCity(event, 'London')">Name</button>
     <button class="tablinks" id="age" onclick="openCity(event, 'Paris')">Age</button>
@@ -75,19 +76,19 @@
 
   <div id="London" class="tabcontent">
     <h3>Enter Name</h3>
-    <input type="text" class="form-control" id="name" name="name" style="width:70%; height:40px; margin:20px 20px" placeholder="Enter Name">
+    <input type="text" class="form-control" id="name" name="name" style="width:70%; height:40px; margin:20px 20px" placeholder="Enter Name" onkeypress="nextnew(event,'age', 'Paris')">
     <button class="button" onclick="next('age', 'Paris')">Next</button>
   </div>
 
   <div id="Paris" class="tabcontent">
     <h3>Age</h3>
-    <input type="number" class="form-control" id="umar" name="age" style="width:70%; height:40px; margin:20px 20px" placeholder="Age">
+    <input type="number" class="form-control" id="umar" name="age" style="width:70%; height:40px; margin:20px 20px" placeholder="Age" onkeypress="nextnew(event,'city', 'Tokyo')">
     <button class="button" onclick="next('city', 'Tokyo')">Next</button>
   </div>
 
   <div id="Tokyo" class="tabcontent">
     <h3>City</h3>
-    <select class="form-control" id="shar" name="email" style="width:70%; height:40px; margin:20px 20px" placeholder="City">
+    <select class="form-control" id="shar" name="email" style="width:70%; height:40px; margin:20px 20px" placeholder="City"  onkeypress="nextnew(event,'address', 'Newyork')">
       <option>Select</option>
       <option>DELHI</option>
       <option>HARAYANA</option>+
@@ -99,7 +100,7 @@
   
    <div id="Newyork" class="tabcontent">
     <h3>Address</h3>
-    <input type="text" class="form-control" id="pata" name="name" style="width:70%; height:40px; margin:20px 20px" placeholder="Address">
+    <input type="text" class="form-control" id="pata" name="name" style="width:70%; height:40px; margin:20px 20px" placeholder="Address" onkeypress="nextnew(event,'gender', 'Newdelhi')">
     <button class="button" onclick="next('gender', 'Newdelhi')">Next</button>
   </div>
   
@@ -129,7 +130,7 @@
 	 <button class="button" onclick="next('result', 'India')">Submit</button>
   </div>
   
-  <div id="India" class="tabcontent">
+  <div id="India" class="tabcontent"> 
   <div id="value"></div>
   </div>
   
@@ -147,6 +148,8 @@
       document.getElementById(cityName).style.display = "block";
       evt.currentTarget.className += " active";
     }
+	
+	
 
 	 function next(nexttab, nextdiv) {
       var i, tabcontent, tablinks;
@@ -160,10 +163,28 @@
       }
       document.getElementById(nextdiv).style.display = "block";
       document.getElementById(nexttab).className += " active";
-	  
-	  show();
+
+	  show()
     }
 
+
+	 function nextnew(event, nexttab, nextdiv) {
+	 if(event.keyCode == 13){
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(nextdiv).style.display = "block";
+      document.getElementById(nexttab).className += " active";
+
+	  show()
+	  };
+    }
 
   function show() 
   {
