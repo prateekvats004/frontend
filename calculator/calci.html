@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<link rel="stylesheet" href="calci.css">
+  </head>
+  <body>
+    <div class="parent">
+	
+	  <div class="child1">
+	    <h3>Calculator</h3>
+		<form>
+		<label class="data" id="value"></label>
+		<div class="abc">
+		<button type="button" class="button" onclick="" onkeypress="">x^2</button>
+		<button type="reset" class="button" onclick="" onkeypress="">C</button>
+		<button type="button" class="button" onclick="" onkeypress="" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+</svg></button>
+		<button type="button" class="button" id="a" onclick="getvalue()" onkeypress="">/</button>
+		<input type="button" class="button" id="b" onclick="getvalue()" onkeypress="" value="7">
+		<input type="button" class="button" id="c" onclick="getvalue()" onkeypress="" value="8">
+		<input type="button" class="button" id="d" onclick="getvalue()" onkeypress="" value="9">
+		<button type="button" class="button" id="e" onclick="getvalue()" onkeypress="">*</button>
+		<input type="button" class="button" id="f" onclick="getvalue()" onkeypress="" value="4">
+		<input type="button" class="button" id="g"  onclick="getvalue()" onkeypress="" value="5">
+		<input type="button" class="button" id="h" onclick="getvalue()" onkeypress="" value="6">
+		<button type="button" class="button" id="i" onclick="getvalue()" onkeypress="">-</button>
+		<input type="button" class="button" id="j" onclick="getvalue()" onkeypress="" value="1">
+		<input type="button" class="button" id="k" onclick="getvalue()" onkeypress="" value="2">
+		<input type="button" class="button" id="l" onclick="getvalue()" onkeypress="" value="3">
+		<button type="button" class="button" id="m" onclick="getvalue()" onkeypress="">+</button>
+		<input type="button" class="button" id="n" onclick="getvalue()" onkeypress="" value="%">
+		<input type="button" class="button" id="o" onclick="getvalue()" onkeypress="" value="0">
+		<input type="button" class="button" id="p" onclick="getvalue()" onkeypress="" value=".">
+		<button type="button" class="button" id="q" onclick="getvalue()" onkeypress="">=</button>
+		</div>
+		</form>
+		</div>
+		
+		
+		<div class="child2">
+		<h3 class="mx-5">History</h3>
+		<label class="data2">23-43</label>
+		</div>
+		
+		</div>
+		
+		<script>
+		function getvalue() {
+		
+		var obj = {
+		document.getElementById("a").value : "/";
+		document.getElementById("b").value : 7;
+		document.getElementById("c").value : 8;
+		document.getElementById("d").value : 9;
+		document.getElementById("e").value : "*";
+		document.getElementById("f").value : 4;
+		document.getElementById("g").value : 5;
+		document.getElementById("h").value : 6;
+		document.getElementById("i").value : "-";
+		document.getElementById("j").value : 1;
+		document.getElementById("k").value : 2;
+		document.getElementById("l").value : 3;
+		document.getElementById("m").value : "+";
+		document.getElementById("n").value : "%";
+		document.getElementById("o").value : 0;
+		document.getElementById("p").value : ".";
+		document.getElementById("q").value : "="
+		}
+		
+		var input = document.getElementsByClassName("button").value;
+		document.getElementById("value").innerHTML = input;
+		}
+		
+		</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
