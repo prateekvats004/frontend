@@ -15,28 +15,29 @@
 		<form>
 		<label class="data" id="value"></label>
 		<div class="abc">
-		<button type="button" class="button" onclick="" onkeypress="">x^2</button>
-		<button type="reset" class="button" onclick="" onkeypress="">C</button>
-		<button type="button" class="button" onclick="" onkeypress="" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+		<button type="button" id="r" class="button" onclick="getvalue('r')" onkeypress="" value="^2">x^2</button>
+		<button type="reset" id="s" class="button" onclick="" onkeypress="">C</button>
+		<button type="button" id="t" class="button" onclick="" onkeypress=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
 </svg></button>
-		<button type="button" class="button" id="a" onclick="getvalue()" onkeypress="">/</button>
-		<input type="button" class="button" id="b" onclick="getvalue()" onkeypress="" value="7">
-		<input type="button" class="button" id="c" onclick="getvalue()" onkeypress="" value="8">
-		<input type="button" class="button" id="d" onclick="getvalue()" onkeypress="" value="9">
-		<button type="button" class="button" id="e" onclick="getvalue()" onkeypress="">*</button>
-		<input type="button" class="button" id="f" onclick="getvalue()" onkeypress="" value="4">
-		<input type="button" class="button" id="g"  onclick="getvalue()" onkeypress="" value="5">
-		<input type="button" class="button" id="h" onclick="getvalue()" onkeypress="" value="6">
-		<button type="button" class="button" id="i" onclick="getvalue()" onkeypress="">-</button>
-		<input type="button" class="button" id="j" onclick="getvalue()" onkeypress="" value="1">
-		<input type="button" class="button" id="k" onclick="getvalue()" onkeypress="" value="2">
-		<input type="button" class="button" id="l" onclick="getvalue()" onkeypress="" value="3">
-		<button type="button" class="button" id="m" onclick="getvalue()" onkeypress="">+</button>
-		<input type="button" class="button" id="n" onclick="getvalue()" onkeypress="" value="%">
-		<input type="button" class="button" id="o" onclick="getvalue()" onkeypress="" value="0">
-		<input type="button" class="button" id="p" onclick="getvalue()" onkeypress="" value=".">
-		<button type="button" class="button" id="q" onclick="getvalue()" onkeypress="">=</button>
+		<button type="button" class="button" id="a" onclick="getvalue('a')" onkeypress="" value="/">/</button>
+		<input type="button" class="button" id="b" onclick="getvalue('b')" onkeypress="" value=7>
+		<input type="button" class="button" id="c" onclick="getvalue('c')" onkeypress="" value=8>
+		<input type="button" class="button" id="d" onclick="getvalue('d')" onkeypress="" value=9>
+		<button type="button" class="button" id="e" onclick="getvalue('e')" onkeypress="" value="*">*</button>
+		<input type="button" class="button" id="f" onclick="getvalue('f')" onkeypress="" value=4>
+		<input type="button" class="button" id="g"  onclick="getvalue('g')" onkeypress="" value=5>
+		<input type="button" class="button" id="h" onclick="getvalue('h')" onkeypress="" value=6>
+		<button type="button" class="button" id="i" onclick="getvalue('i')" onkeypress="" value="-">-</button>
+		<input type="button" class="button" id="j" onclick="getvalue('j')" onkeypress="" value=1>
+		<input type="button" class="button" id="k" onclick="getvalue('k')" onkeypress="" value=2>
+		<input type="button" class="button" id="l" onclick="getvalue('l')" onkeypress="" value=3>
+		<button type="button" class="button" id="m" onclick="getvalue('m')" onkeypress="" value="+">+</button>
+		<input type="button" class="button" id="n" onclick="getvalue('n')" onkeypress="" value="%">
+		<input type="button" class="button" id="o" onclick="getvalue('o')" onkeypress="" value=0>
+		<input type="button" class="button" id="p" onclick="getvalue('p')" onkeypress="" value=".">
+		<button type="button" class="button" id="q" onclick="getvalue('q')" onkeypress="" value="=">=</button>
+		
 		</div>
 		</form>
 		</div>
@@ -45,35 +46,17 @@
 		<div class="child2">
 		<h3 class="mx-5">History</h3>
 		<label class="data2">23-43</label>
-		</div>
 		
 		</div>
 		
+		</div>
 		<script>
-		function getvalue() {
-		
-		var obj = {
-		document.getElementById("a").value : "/";
-		document.getElementById("b").value : 7;
-		document.getElementById("c").value : 8;
-		document.getElementById("d").value : 9;
-		document.getElementById("e").value : "*";
-		document.getElementById("f").value : 4;
-		document.getElementById("g").value : 5;
-		document.getElementById("h").value : 6;
-		document.getElementById("i").value : "-";
-		document.getElementById("j").value : 1;
-		document.getElementById("k").value : 2;
-		document.getElementById("l").value : 3;
-		document.getElementById("m").value : "+";
-		document.getElementById("n").value : "%";
-		document.getElementById("o").value : 0;
-		document.getElementById("p").value : ".";
-		document.getElementById("q").value : "="
-		}
-		
-		var input = document.getElementsByClassName("button").value;
-		document.getElementById("value").innerHTML = input;
+		var arr = [];
+		function getvalue(sign) {
+		var input = document.getElementById(sign).value;
+		arr.push(input);
+		arr.join('* ');
+		document.getElementById("value").innerHTML = arr;
 		}
 		
 		</script>
