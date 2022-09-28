@@ -37,9 +37,14 @@
 	right: 10px;
 }
 
+
+
 .button {
 	width: 10px;
 	height: 8px;
+	border: none;
+	border-radius: 9px;
+	cursor: pointer;
 }
 
 .abc {

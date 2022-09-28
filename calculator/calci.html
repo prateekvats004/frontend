@@ -1,65 +1,162 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>calculator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>calculator</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 	<link rel="stylesheet" href="calci.css">
-  </head>
-  <body>
-    <div class="parent">
-	
-	  <div class="child1">
-	    <h3>Calculator</h3>
-		<form>
-		<label class="data" id="value"></label>
-		<div class="abc">
-		<button type="button" id="r" class="button" onclick="getvalue('r')" onkeypress="" value="^2">x^2</button>
-		<button type="reset" id="s" class="button" onclick="" onkeypress="">C</button>
-		<button type="button" id="t" class="button" onclick="" onkeypress=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-</svg></button>
-		<button type="button" class="button" id="a" onclick="getvalue('a')" onkeypress="" value="/">/</button>
-		<input type="button" class="button" id="b" onclick="getvalue('b')" onkeypress="" value=7>
-		<input type="button" class="button" id="c" onclick="getvalue('c')" onkeypress="" value=8>
-		<input type="button" class="button" id="d" onclick="getvalue('d')" onkeypress="" value=9>
-		<button type="button" class="button" id="e" onclick="getvalue('e')" onkeypress="" value="*">*</button>
-		<input type="button" class="button" id="f" onclick="getvalue('f')" onkeypress="" value=4>
-		<input type="button" class="button" id="g"  onclick="getvalue('g')" onkeypress="" value=5>
-		<input type="button" class="button" id="h" onclick="getvalue('h')" onkeypress="" value=6>
-		<button type="button" class="button" id="i" onclick="getvalue('i')" onkeypress="" value="-">-</button>
-		<input type="button" class="button" id="j" onclick="getvalue('j')" onkeypress="" value=1>
-		<input type="button" class="button" id="k" onclick="getvalue('k')" onkeypress="" value=2>
-		<input type="button" class="button" id="l" onclick="getvalue('l')" onkeypress="" value=3>
-		<button type="button" class="button" id="m" onclick="getvalue('m')" onkeypress="" value="+">+</button>
-		<input type="button" class="button" id="n" onclick="getvalue('n')" onkeypress="" value="%">
-		<input type="button" class="button" id="o" onclick="getvalue('o')" onkeypress="" value=0>
-		<input type="button" class="button" id="p" onclick="getvalue('p')" onkeypress="" value=".">
-		<button type="button" class="button" id="q" onclick="getvalue('q')" onkeypress="" value="=">=</button>
-		
+</head>
+
+<body>
+	<div class="parent">
+
+		<div class="child1">
+			<h3>Calculator</h3>
+			<form>
+				<label class="data" id="value"></label>
+				<div class="abc">
+					<button type="button" id="r" class="button" onclick="getvalue('r')" onkeypress=""
+						value="^2">x^2</button>
+					<button type="button" id="s" class="button" onclick="reset()" onkeypress="">C</button>
+					<button type="button" id="t" class="button" onclick="" onkeypress=""><svg
+							xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+							class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+							<path
+								d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+						</svg></button>
+					<button type="button" class="button" id="a" onclick="getvalue('a')" onkeypress=""
+						value="/">/</button>
+					<input type="button" class="button" id="b" onclick="getvalue('b')" onkeypress="" value=7>
+					<input type="button" class="button" id="c" onclick="getvalue('c')" onkeypress="" value=8>
+					<input type="button" class="button" id="d" onclick="getvalue('d')" onkeypress="" value=9>
+					<button type="button" class="button" id="e" onclick="getvalue('e')" onkeypress=""
+						value="*">*</button>
+					<input type="button" class="button" id="f" onclick="getvalue('f')" onkeypress="" value=4>
+					<input type="button" class="button" id="g" onclick="getvalue('g')" onkeypress="" value=5>
+					<input type="button" class="button" id="h" onclick="getvalue('h')" onkeypress="" value=6>
+					<button type="button" class="button" id="i" onclick="getvalue('i')" onkeypress=""
+						value="-">-</button>
+					<input type="button" class="button" id="j" onclick="getvalue('j')" onkeypress="" value=1>
+					<input type="button" class="button" id="k" onclick="getvalue('k')" onkeypress="" value=2>
+					<input type="button" class="button" id="l" onclick="getvalue('l')" onkeypress="" value=3>
+					<button type="button" class="button" id="m" onclick="getvalue('m')" onkeypress=""
+						value="+">+</button>
+					<input type="button" class="button" id="n" onclick="getvalue('n')" onkeypress="" value="%">
+					<input type="button" class="button" id="o" onclick="getvalue('o')" onkeypress="" value=0>
+					<input type="button" class="button" id="p" onclick="getvalue('p')" onkeypress="" value=".">
+					<button type="button" class="button" id="q" onclick="getvalue('q'); makearray(); result('+','-','*','/')" onkeypress=""
+						value="=">=</button>
+
+				</div>
+			</form>
 		</div>
-		</form>
-		</div>
-		
-		
+
+
 		<div class="child2">
-		<h3 class="mx-5">History</h3>
-		<label class="data2">23-43</label>
-		
+			<h3 class="mx-5">History</h3>
+			<label class="data" id="history"></label>
+
 		</div>
-		
-		</div>
-		<script>
-		var arr = [];
-		function getvalue(sign) {
-		var input = document.getElementById(sign).value;
-		arr.push(input);
-		arr.join('* ');
-		document.getElementById("value").innerHTML = arr;
+	</div>
+	
+	<script>
+	var input;
+	var str = "";
+	var restr;
+	var arr = [];
+	var one;
+	var two;
+	
+	function getvalue(sign) {
+	input = document.getElementById(sign).value;
+    document.getElementById("value").innerHTML +=  input;
+			}
+			
+	
+	function makearray() {
+	str = document.getElementById("value").innerHTML;
+	console.log(str);
+	restr = str.replace('=', '');
+	console.log(restr);
+	if(restr.includes("+")){
+	 arr = restr.split("+");
+	console.log(arr);
+	}
+	else
+	   if(restr.includes("-")){
+	 arr = restr.split("-");
+	console.log(arr);
+	}
+	else
+	   if(restr.includes("*")){
+	 arr = restr.split("*");
+	console.log(arr);
+	}
+	else
+	   if(restr.includes("/")){
+	 arr = restr.split("/");
+	console.log(arr);
+	}
+	else
+	   if(restr.includes("^2")){
+	 arr = restr.split("^2");
+	console.log(arr);
+	}
+	one = parseInt(arr[0]);
+	console.log(one);
+	two = parseInt(arr[1]);
+	console.log(two);
+	}	
+	
+	function result() {
+	if(restr.includes("+")) {
+	  var add = one + two;
+	  console.log(add);
+	  document.getElementById("value").innerHTML +=  add;
+	}
+    else
+       if(restr.includes("-")) {
+	  var sub = one - two;
+	  console.log(sub);
+	  document.getElementById("value").innerHTML +=  sub;
+	}
+   else
+       if(restr.includes("*")) {
+	  var mul = one * two;
+	  console.log(mul);
+	  document.getElementById("value").innerHTML +=  mul;
 		}
-		
-		</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-  </body>
+    else
+       if(restr.includes("/")) {
+	  var div = one / two;
+	  console.log(div);
+	  document.getElementById("value").innerHTML +=  div;
+	}	
+    else
+       if(restr.includes("^2")) {
+	  var square = one * one;
+	  console.log(square);
+	  document.getElementById("value").innerHTML +=  square;
+	}			
+	 }
+
+	function reset() {
+	var reset = document.getElementById("value").innerHTML;
+	 reset.innerHTML = "";
+	console.log(reset);
+	}
+	
+			
+	</script>
+	
+	
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+		crossorigin="anonymous"></script>
+</body>
+
 </html>
