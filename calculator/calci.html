@@ -20,8 +20,8 @@
 				<div class="abc">
 					<button type="button" id="r" class="button" onclick="getvalue('r')" onkeypress=""
 						value="^2">x^2</button>
-					<button type="button" id="s" class="button" onclick="reset()" onkeypress="">C</button>
-					<button type="button" id="t" class="button" onclick="" onkeypress=""><svg
+					<button id="s" class="button" onclick="reset()" onkeypress="">C</button>
+					<button type="button" id="t" class="button" onclick="back()" onkeypress=""><svg
 							xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
 							class="bi bi-x-circle-fill" viewBox="0 0 16 16">
 							<path
@@ -60,6 +60,7 @@
 			<label class="data" id="history"></label>
 
 		</div>
+		<div id="hey">hello</div>
 	</div>
 	
 	<script>
@@ -69,87 +70,84 @@
 	var arr = [];
 	var one;
 	var two;
+	var history = [];
 	
 	function getvalue(sign) {
 	input = document.getElementById(sign).value;
     document.getElementById("value").innerHTML +=  input;
 			}
 			
+    function back() {
+	var back = document.getElementById("value").innerHTML;
+	var backresult = back.slice(0,-1);
+	
+	document.getElementById("value").innerHTML = backresult;
+	}		
 	
 	function makearray() {
 	str = document.getElementById("value").innerHTML;
-	console.log(str);
 	restr = str.replace('=', '');
-	console.log(restr);
 	if(restr.includes("+")){
 	 arr = restr.split("+");
-	console.log(arr);
 	}
 	else
 	   if(restr.includes("-")){
 	 arr = restr.split("-");
-	console.log(arr);
 	}
 	else
 	   if(restr.includes("*")){
 	 arr = restr.split("*");
-	console.log(arr);
 	}
 	else
 	   if(restr.includes("/")){
 	 arr = restr.split("/");
-	console.log(arr);
 	}
 	else
 	   if(restr.includes("^2")){
 	 arr = restr.split("^2");
-	console.log(arr);
 	}
-	one = parseInt(arr[0]);
-	console.log(one);
-	two = parseInt(arr[1]);
-	console.log(two);
+	one = parseFloat(arr[0]);
+	two = parseFloat(arr[1]);
 	}	
 	
 	function result() {
 	if(restr.includes("+")) {
 	  var add = one + two;
-	  console.log(add);
 	  document.getElementById("value").innerHTML +=  add;
 	}
     else
        if(restr.includes("-")) {
 	  var sub = one - two;
-	  console.log(sub);
 	  document.getElementById("value").innerHTML +=  sub;
 	}
    else
        if(restr.includes("*")) {
 	  var mul = one * two;
-	  console.log(mul);
 	  document.getElementById("value").innerHTML +=  mul;
 		}
     else
        if(restr.includes("/")) {
 	  var div = one / two;
-	  console.log(div);
 	  document.getElementById("value").innerHTML +=  div;
 	}	
     else
        if(restr.includes("^2")) {
 	  var square = one * one;
-	  console.log(square);
 	  document.getElementById("value").innerHTML +=  square;
-	}			
+	}	
+	  var story = document.getElementById("value").innerHTML;	
+		 console.log(story);
+		 history.push("story");
+		 console.log(history);
+		 document.getElementById("history").innerHTML = story;
 	 }
+        
 
 	function reset() {
 	var reset = document.getElementById("value").innerHTML;
 	 reset.innerHTML = "";
-	console.log(reset);
 	}
 	
-			
 	</script>
 	
 	

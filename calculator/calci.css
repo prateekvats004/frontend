@@ -18,9 +18,7 @@
 .child1 {
 	width: 50%;
 	height: 100%;
-	text-align: left;
-	
-	
+	text-align: left;	
 }
 
 .child2 {
@@ -85,3 +83,15 @@
 	right: 10px;
 }
 
+<script>
+		var arr = [];
+		var add;
+		var sub;
+		var mul;
+		var div;  
+		var abc;
+		var xyz;
+		var square;
+		
+		
+	
