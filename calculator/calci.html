@@ -15,12 +15,12 @@
 
 		<div class="child1">
 			<h3>Calculator</h3>
-			<form>
+			<div>
 				<label class="data" id="value"></label>
 				<div class="abc">
 					<button type="button" id="r" class="button" onclick="getvalue('r')" onkeypress=""
 						value="^2">x^2</button>
-					<button id="s" class="button" onclick="reset()" onkeypress="">C</button>
+			<button type="button"  class="button" onclick="reset()" >C</button>
 					<button type="button" id="t" class="button" onclick="back()" onkeypress=""><svg
 							xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
 							class="bi bi-x-circle-fill" viewBox="0 0 16 16">
@@ -47,21 +47,17 @@
 					<input type="button" class="button" id="n" onclick="getvalue('n')" onkeypress="" value="%">
 					<input type="button" class="button" id="o" onclick="getvalue('o')" onkeypress="" value=0>
 					<input type="button" class="button" id="p" onclick="getvalue('p')" onkeypress="" value=".">
-					<button type="button" class="button" id="q" onclick="getvalue('q'); makearray(); result('+','-','*','/')" onkeypress=""
+					<button type="button" class="button" id="q" onclick="getvalue('q'); makearray(); result('+','-','*','/'); history()" onkeypress=""
 						value="=">=</button>
 
 				</div>
-			</form>
+			</div>
 		</div>
 
 
 		<div class="child2">
 			<h3 class="mx-5">History</h3>
-			<label class="data" id="history"></label>
-
-		</div>
-		<div id="hey">hello</div>
-	</div>
+			<label class="data" id="history"></label> 
 	
 	<script>
 	var input;
@@ -70,7 +66,7 @@
 	var arr = [];
 	var one;
 	var two;
-	var history = [];
+	var his = "";
 	
 	function getvalue(sign) {
 	input = document.getElementById(sign).value;
@@ -106,6 +102,10 @@
 	   if(restr.includes("^2")){
 	 arr = restr.split("^2");
 	}
+	else
+	if(restr.includes("%")) {
+		arr = restr.split("%");
+	}
 	one = parseFloat(arr[0]);
 	two = parseFloat(arr[1]);
 	}	
@@ -134,20 +134,27 @@
        if(restr.includes("^2")) {
 	  var square = one * one;
 	  document.getElementById("value").innerHTML +=  square;
+	}
+	else
+	if(restr.includes("%")) {
+		var reminder = one%two
+		document.getElementById("value").innerHTML += reminder;
 	}	
-	  var story = document.getElementById("value").innerHTML;	
-		 console.log(story);
-		 history.push("story");
-		 console.log(history);
-		 document.getElementById("history").innerHTML = story;
+	
 	 }
         
-
+	 function history() {
+		var story = document.getElementById("value").innerHTML;	
+		 console.log(story);
+		 
+		his = his.concat(story) +"<br>";
+	    console.log(his);
+	    document.getElementById("history").innerHTML = his;
+	 }
+	  
 	function reset() {
-	var reset = document.getElementById("value").innerHTML;
-	 reset.innerHTML = "";
+	document.getElementById("value").innerHTML = "";
 	}
-	
 	</script>
 	
 	
