@@ -47,7 +47,7 @@
 					<input type="button" class="button" id="n" onclick="getvalue('n')" onkeypress="" value="%">
 					<input type="button" class="button" id="o" onclick="getvalue('o')" onkeypress="" value=0>
 					<input type="button" class="button" id="p" onclick="getvalue('p')" onkeypress="" value=".">
-					<button type="button" class="button" id="q" onclick="getvalue('q'); makearray(); result('+','-','*','/'); history()" onkeypress=""
+					<button type="button" class="button" id="q" onclick="getvalue('q'); makearray(); result('+','-','*','/'); history();" onkeypress=""
 						value="=">=</button>
 
 				</div>
@@ -145,10 +145,8 @@
         
 	 function history() {
 		var story = document.getElementById("value").innerHTML;	
-		 console.log(story);
-		 
-		his = his.concat(story) + "<br>";
-	    console.log(his);
+		var acc = story.split("=");		
+		 his += acc[0] + "=" + "<br>" + acc[1] + "<br>" + "<br>";
 	    document.getElementById("history").innerHTML = his;
 	 }
 	  
