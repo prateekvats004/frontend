@@ -1,70 +1,190 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Clock</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Clock</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<link rel="stylesheet" href="clock.css">
-  </head>
-  <body>
-    <h1 id="head">Welcome Guest !</h1>
+</head>
+
+<body>
+	<h1 id="head">Welcome Guest !</h1>
 	<hr>
 	<div class="flex">
-	<h3 class="time" id="time">Current Time :</h3>
-	<h4 id="p1"  class="time"></h4>
+		<h3 class="time" id="time">Current Time :</h3>
+		<h4 id="p1" class="time"></h4>
 	</div>
-	
+
 	<div class="flex2">
-	<h3 class="date" id="time">Current Date :</h3>
-	<h4 id="p2"  class="date"></h4>
+		<h3 class="date" id="time">Current Date :</h3>
+		<h4 id="p2" class="date"></h4>
 	</div>
 	<hr>
-	
+
 	<h3 class="watch">Stop Watch</h3>
-	<button class="start" onclick="starttimer()">Start</button>
-	
+	<button class="start" onclick="startTimer()">Start</button>
+
 	<div class="displaytime">
-	    00 : 00 : 00
+		<p><span id="minutes">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></p>
 	</div>
 	<div class="watchcontrol">
-	<button>Lap</button>
-	<button>Stop</button>
-	<button>Reset</button>
+		<button onclick="lap()">Lap</button>
+		<button onclick="stopTimer()">Stop</button>
+		<button onclick="resetTimer()">Reset</button>
 	</div>
-	<script>
-	const monthNames = ["Jan", "Feb", "Mar", "April", "May", "June",
-  "July", "Aug", "Sept", "Oct", "Nov", "Dec"
-];
+	<table>
+		<tr>
+			<th>
+				<div id="lap"></div>
+			</th>
+			<th>
+				<div id="lap_Time_Heading"></div>
+			</th>
+			<th>
+				<div id="overall"></div>
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<div id="call"></div>
+			</td>
+			<td>
+				<div id="lap_Time"></div>
+			</td>
+			<td>
+				<div id="lap_stop"></div>
+			</td>
+		</tr>
+	</table>
 
-	function t() {
-	console.log('123');
-	var time = new Date();
-    var current_time = time.getHours()+"-"+time.getMinutes()+"-"+ time.getSeconds();
-	document.getElementById("p1").innerHTML = current_time;
-}
-t();
-window.setInterval(t, 1000);
-    
-	function d() {
-	var date = new Date();
-	var dd = date.getDate();
-	var mm = monthNames[date.getMonth()];
-	var yy = date.getFullYear();
-	var current_date = dd + "-" + mm + "-" + yy;
-	document.getElementById("p2").innerHTML = current_date;
-	}
-	d();
-	</script>
-	
 	<script>
-	
-	let [milliseconds,seconds,minutes,hours] = [0,0,0,0];
-    let timerRef = document.querySelector('.timerDisplay');
-    let int = null;
-	
-	function starttimer() {
+		const monthNames = ["Jan", "Feb", "Mar", "April", "May", "June",
+			"July", "Aug", "Sept", "Oct", "Nov", "Dec"
+		];
+
+		function t() {
+			var time = new Date();
+			var current_time = time.getHours() + "-" + time.getMinutes() + "-" + time.getSeconds();
+			document.getElementById("p1").innerHTML = current_time;
+		}
+		t();
+		window.setInterval(t, 1000);
+
+		function d() {
+			var date = new Date();
+			var dd = date.getDate();
+			var mm = monthNames[date.getMonth()];
+			var yy = date.getFullYear();
+			var current_date = dd + "-" + mm + "-" + yy;
+			document.getElementById("p2").innerHTML = current_date;
+		}
+		d();
 	</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  </body>
+
+	<script>
+		var tens = 00;
+		var seconds = 00;
+		var minutes = 00;
+		var reciveTens = document.getElementById("tens");
+		var reciveSeconds = document.getElementById("seconds");
+		var reciveMinutes = document.getElementById("minutes");
+		var interval;
+
+		function startTimer() {
+			interval = setInterval(startWatch, 10);
+		}
+
+		function stopTimer() {
+			clearInterval(interval);
+		}
+
+		function resetTimer() {
+			clearInterval(interval);
+			tens = "00";
+			seconds = "00";
+			minutes = "0";
+			reciveTens.innerHTML = tens;
+			reciveSeconds.innerHTML = seconds;
+			reciveMinutes.innerText = minutes;
+		}
+
+		function startWatch() {
+			tens++;
+
+			if (tens <= 9) {
+				reciveTens.innerHTML = "0" + tens;
+			}
+
+			if (tens > 9) {
+				reciveTens.innerHTML = tens;
+			}
+
+			if (tens > 99) {
+				seconds++;
+				reciveSeconds.innerHTML = "0" + seconds;
+				tens = 0;
+				
+				reciveTens.innerHTML = "0" + 0;
+			}
+
+			if (seconds > 9) {
+				reciveSeconds.innerHTML = seconds;
+			}
+
+			if (seconds > 59) {
+				minutes++;
+				reciveMinutes.innerHTML = "0" + minutes;
+				seconds = 0;
+				reciveSeconds.innerHTML = "0" + 0;
+			}
+
+			if (minutes > 9) {
+				reciveMinutes.innerHTML = minutes;
+			}
+		}
+
+
+		var callCount = 0;
+		function lap() {
+			document.getElementById("lap").innerHTML = "Lap";
+			document.getElementById("lap_Time_Heading").innerHTML = "Lap Time";
+			document.getElementById("overall").innerHTML = "Overall";
+
+
+
+				callCount++;
+				var times_callCont = "";
+				console.log(callCount);
+				for (i = 0; i < callCount; i++) {
+					times_callCont = callCount + "<br>";
+					
+				}
+				document.getElementById("call").innerHTML += times_callCont;
+			
+			lap_overall();
+			document.getElementById("lap_Time").innerHTML = lap_minutes + ":" + lap_seconds + ":" + lap_tens + "<br>";
+			lap_Time();
+		}
+
+		function lap_overall() {
+			var lap_minutes = document.getElementById("minutes").innerHTML;
+			
+			var lap_seconds = document.getElementById("seconds").innerHTML;
+			var lap_tens = document.getElementById("tens").innerHTML;
+
+			document.getElementById("lap_stop").innerHTML += lap_minutes + ":" + lap_seconds + ":" + lap_tens + "<br>";
+		}
+
+		function lap_Time() {
+			
+		}
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+		crossorigin="anonymous"></script>
+</body>
+
 </html>
